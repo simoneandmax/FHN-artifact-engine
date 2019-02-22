@@ -73,6 +73,7 @@ $(function() {
 			"Biomorphic forms",
 			"Parameters",
 			"Memes",
+			"Cities",
 			
 		],
 		
@@ -279,11 +280,13 @@ $(function() {
 			"a neo-Art Nouveau",
 			"an auratic",
 			"a figurative",
+			"a geothermal",
+			"a multistrata",
 			
 		],
 		
 		noun: [
-			"permaculture farm", "wearable", "gestural interface", "camera", "health checkup screen", "infrastructure bank", "tool", "slime kit", "wand", "soil", "tree", "earth", "microchip", "building", "medicinal herb", "water purifier", "gas mask", "moon", "bionic limb", "cyborg", "communication device", "necklace", "submarine", "printer", "food item", "daylight machine", "water", "vertical farm", "tiny house", "greenhouse", "bioshelter", "replicator", "cloaking device", "carbon nanotube", "computer", "laser", "cryptocurrency", "DNA editor", "wetware accelerator", "space elevator", "apparatus", "digital assistant", "subvocal processor", "womb", "prosthetic", "implant", "being", "lifeform", "vaccine", "transplant", "exoskeleton", "basic income", "work of art", "poem", "pedagogy","zeitgeist","organism",
+			"permaculture farm", "wearable", "gestural interface", "camera", "health checkup screen", "infrastructure bank", "tool", "slime kit", "wand", "soil", "tree", "earth", "microchip", "building", "medicinal herb", "water purifier", "gas mask", "moon", "bionic limb", "cyborg", "communication device", "necklace", "submarine", "printer", "food item", "daylight machine", "wind turbine", "vertical farm", "tiny house", "greenhouse", "bioshelter", "replicator", "cloaking device", "carbon nanotube", "computer", "laser", "cryptocurrency", "DNA editor", "wetware accelerator", "space elevator", "apparatus", "digital assistant", "subvocal processor", "womb", "prosthetic", "implant", "being", "lifeform", "vaccine", "transplant", "exoskeleton", "basic income", "work of art", "poem", "pedagogy","zeitgeist","organism","biodigester"
 		],
 		
 	});
