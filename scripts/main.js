@@ -2,12 +2,11 @@
 $(function() {
 
     // Populate using an object literal
-	
 	WTF.init({
 
          heading: [
             "Imagine, in the year 02029:",
-            "In 10 years, we'll see:",
+            "In the next 0100 years, we'll see:",
 			 "This is our future:",
 		 ],
 		
@@ -28,7 +27,7 @@ $(function() {
 			 "Thinkers",
 			 "New species",
 			 "Family",
-			 "The people",
+			 "People",
 			 "Wage laborers",
 			 "Communities",
 			 "Radicals",
@@ -37,7 +36,7 @@ $(function() {
 			 "Astronauts",
 			 "Scientists",
 			 "Agricultural robots",
-			 "Changemakers",
+			 "Change-makers",
 			 "Everyone",
 			 "Niblings",
 			 "Abolitionists",
@@ -55,12 +54,26 @@ $(function() {
 			 "Microbes",
 			 "Elders",
 			 "Farmers",
-			 "Our children",
+			 "Children",
 			 "Activist-scholars",
 			 "Community organizers",
 			 "Algorithms",
 			 "Chatbots",
-			 "Data"
+			 "Data",
+			 "Activists",
+			"Worker co-ops",
+			"Community arts organizations",
+			"Politicians",
+			"Judges",
+			"Institutions",
+			"Public banks",
+			"Citizens' assemblies",
+			"Oracles",
+			"Journalists",
+			"Biomorphic forms",
+			"Parameters",
+			"Memes",
+			
 		],
 		
 		context: [
@@ -79,7 +92,8 @@ $(function() {
 			"a lush", 
 			"a warm", 
 			"a soft", 
-			"an open-sourced", 
+			"a decentralized",
+			"an open-source", 
 			"a cooperative", 
 			"a collaborative", 
 			"a bright", 
@@ -131,16 +145,21 @@ $(function() {
 			"a delicious", 
 			"a liberatory", 
 			"an emancipatory", 
-			"a post-peak oil" 
-
-         ],
+			"a post-peak oil",
+			"a desirable",
+			"a disjunctive",
+			"a liminal",
+			"a sublime",
+			
+		],
 	
 		verb: [
 			"laughing",
 			"sharing",
 			"running",
 			"gathering",
-			"gardening", "blogging", "harvesting", "organizing", "eating", "dreaming", "philosophizing", "peacemaking", "rendering", "speaking", "dancing", "sleeping", "ritualizing", "smelling", "vacationing", "living", "celebrating", "crafting", "creating", "touching", "tasting", "hearing", "seeing", "telecommunicating", "designing", "piloting", "singing", "browsing", "chatting", "building", "gaming", "hacking", "microblogging", "syncing", "thinking", "helping", "making", "exercising", "reflecting", "thriving", "flourishing", "cooking", "procreating", "flocking"
+			"gardening", "blogging", "harvesting", "organizing", "eating", "dreaming", "philosophizing", "peacemaking", "rendering", "speaking", "dancing", "sleeping", "ritualizing", "smelling", "vacationing", "living", "celebrating", "crafting", "creating", "touching", "tasting", "hearing", "seeing", "telecommunicating", "designing", "piloting", "singing", "browsing", "chatting", "building", "gaming", "hacking", "microblogging", "syncing", "thinking", "helping", "making", "exercising", "reflecting", "thriving", "flourishing", "cooking", "procreating", "flocking",
+			"posting", "waging love", "calibrating", "hosting", "conversing", "coexisting", "cohousing", "composting", "relaxing", "maintaining", "compromising", "negotiating", "taking our-selfies", "working in solidarity", "collectivelly bargaining","painting","printmaking","programming","juxtaposed","relating","manifesting","subverting","problematizing","investigating","embracing","aestheticizing","reinventing","unpacking","recontexualizing", "revolutionizing","repurposing","gesturing","mark-making","fluxing","reproducing","oscillating",
 		],
 		
 		adjective: [
@@ -173,7 +192,7 @@ $(function() {
 			"a distributed", 
 			"a dynamic", 
 			"a generative", 
-			"a gesture-controlled", 
+			"a haptic", 
 			"an integrated", 
 			"an ultra-lightweight", 
 			"a locally-produced", 
@@ -243,14 +262,31 @@ $(function() {
 			"a cybernetic", 
 			"an in vitro", 
 			"a post-scarcity", 
-			"a post-human"
-         ],
+			"a post-human",
+			"a post-consumer",
+			"an upcycled",
+			"a union-made",
+			"a neural-networked",
+			" a single photon",
+			"a realistically utopian",
+			"a counter-hegemonic",
+			"a poststructural",
+			"a feminist","a developmentally-appropriate",
+			"a transdisciplinary",
+			"an interactive",
+			"a metacognitive",
+			"a visionary",
+			"a neo-Art Nouveau",
+			"an auratic",
+			"a figurative",
+			
+		],
 		
-		 noun: [
-             "permaculture farm", "wearable", "gestural interface", "camera", "health checkup screen", "infrastructure bank", "tool", "slime kit", "wand", "soil", "tree", "earth", "microchip", "building", "medicinal herb", "water purifier", "gas mask", "moon", "bionic limb", "cyborg", "communication device", "necklace", "submarine", "printer", "food item", "daylight machine", "water", "vertical farm", "tiny house", "greenhouse", "bioshelter", "replicator", "cloaking device", "carbon nanotube", "computer", "laser", "cryptocurrency", "DNA editor", "wetware accelerator", "space elevator", "apparatus", "digital assistant", "subvocal processor", "womb", "prosthetic", "implant", "being", "lifeform", "vaccine", "transplant", "exoskeleton", "basic income"
-         ],
+		noun: [
+			"permaculture farm", "wearable", "gestural interface", "camera", "health checkup screen", "infrastructure bank", "tool", "slime kit", "wand", "soil", "tree", "earth", "microchip", "building", "medicinal herb", "water purifier", "gas mask", "moon", "bionic limb", "cyborg", "communication device", "necklace", "submarine", "printer", "food item", "daylight machine", "water", "vertical farm", "tiny house", "greenhouse", "bioshelter", "replicator", "cloaking device", "carbon nanotube", "computer", "laser", "cryptocurrency", "DNA editor", "wetware accelerator", "space elevator", "apparatus", "digital assistant", "subvocal processor", "womb", "prosthetic", "implant", "being", "lifeform", "vaccine", "transplant", "exoskeleton", "basic income", "work of art", "poem", "pedagogy","zeitgeist","organism",
+		],
 		
-     });
+	});
 
     // Populate using a JSON file
     // WTF.init( 'sample.json' );
