@@ -33,7 +33,7 @@ mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}del{te
 
 html,head {
 	
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
 	text-transform: uppercase;
 	height: 100%;
 	background: linear-gradient(to top, #f5b9c5, #8ec9f1) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
