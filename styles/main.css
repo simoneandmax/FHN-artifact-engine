@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'VG5000';
+    src:  url('../FHN-artifact-engine-8/fonts/'VG5000-Regular_web.woff2') format('woff2'),
+        url('../FHN-artifact-engine-8/fonts/'VG5000-Regular_web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /*
 	-- begin reset
