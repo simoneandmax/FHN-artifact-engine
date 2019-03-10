@@ -284,46 +284,188 @@ function correctGrammar(input) {
         return copy;
     }
 
+    //work through letter by letter. If it matches the letters I have replacements for, flip a coin to see if it gets replaced, when i run into a "&" skip to the next ";". 
+    //make each letter an object? so that they can have properties of replacement, as well as frequency
     function letterFluidReplace(text) {
         console.log(text);
         //can convert this to an array and loop later
-        var thisChar = "a";
-        var replacementCharArray, replacementChar;
+        var thisChar = ["a","c","d","e","l","i","n","o","s","t","u","y"];
+        var textIndex = 0,
+            textEnd = text.length;
+        var specialCharArray, replacementChance, replaced, replacementChar, specialChar;
 
-        switch(thisChar){
-            case "a":
-                replacementCharArray = 
-                [
-                    "&Aacute;",  
-                    "&aacute;", 
-                    "&Agrave;",  
-                    "&Acirc;",  
-                    "&agrave;",  
-                    "&Acirc;",  
-                    "&acirc;",  
-                    "&Auml;",  
-                    "&auml;",  
-                    "&Atilde;",  
-                    "&atilde;",  
-                    "&Aring;",  
-                    "&aring;",  
-                    "&aelig;"
-                ];
-                break;
-            default:
-                null;
+
+        while(textIndex<textEnd){
+            if(isReplaceChar(text.charAt(textIndex))){
+                replacementChar = text.charAt(textIndex);
+                specialCharArray = getSpecialChars(replacementChar);
+                replacementChance = (text.split(replacementChar).length);
+
+                specialChar = specialCharArray[Math.floor((Math.random() * specialCharArray.length))];
+                //console.log(specialChar);
+                
+                if(Math.floor((Math.random() * replacementChance))<=1){
+                    console.log(replacementChance + " passed");
+                    text = replaceAt(text, textIndex, specialChar);
+                }
+                
+                //jump to the end of the special character and re-evaluate textEnd with added characters.
+                textIndex+=specialChar.length;
+                textEnd = text.length;
+            }
+            else textIndex+=1;
         }
 
-        replacementChar = replacementCharArray[Math.floor((Math.random() * replacementCharArray.length) + 1)];
+        function getSpecialChars(char){
+            var replacementCharArray;
+            switch(char){ //currently for a,c,d,e,l,i,n,o,s,t,u,y
+                case "a":
+                    replacementCharArray = 
+                    [
+                        "A",
+                        "&Aacute;",  
+                        "&aacute;", 
+                        "&Agrave;",  
+                        "&Acirc;",  
+                        "&agrave;",  
+                        "&Acirc;",  
+                        "&acirc;",  
+                        "&Auml;",  
+                        "&auml;",  
+                        "&Atilde;",  
+                        "&atilde;",  
+                        "&Aring;",  
+                        "&aring;",  
+                        "&aelig;"
+                    ];
+                    break;
+                case "c":
+                    replacementCharArray =
+                    [
+                        "C",
+                        "&Ccedil;",  
+                        "&ccedil;"
+                    ];
+                    break;
+                case "d":
+                    replacementCharArray =
+                    [
+                        "D",
+                        "&eth;"
+                    ];
+                    break;
+                case "e":
+                    replacementCharArray =
+                    [
+                        "E",
+                        "&Eacute;",  
+                        "&eacute;",  
+                        "&Egrave;",  
+                        "&egrave;",  
+                        "&Ecirc;",
+                        "&ecirc;", 
+                        "&Euml;",
+                        "&euml;"
+                    ];
+                    break;
+                case "l":
+                    replacementCharArray =
+                    [
+                        "L",
+                    ]
+                    break;
+                case "i":
+                    replacementCharArray =
+                    [
+                        "I",
+                        "&Iacute;",  
+                        "&iacute;",  
+                        "&Igrave;",  
+                        "&igrave;",  
+                        "&Icirc;",
+                        "&icirc;",  
+                        "&Iuml;",  
+                        "&iuml;" 
+                    ];
+                    break;
+                case "n":
+                    replacementCharArray =
+                    [
+                        "N",
+                        "&Ntilde;",  
+                        "&ntilde;",
+                    ];
+                    break;
+                case "o":
+                    replacementCharArray =
+                    [
+                        "O",
+                        "&Oacute;",  
+                        "&oacute;",  
+                        "&Ograve;",  
+                        "&ograve;",  
+                        "&Ocirc;",  
+                        "&ocirc;",  
+                        "&Ouml;",  
+                        "&ouml;",  
+                        "&Otilde;",  
+                        "&otilde;",  
+                        "&Oslash;",  
+                        "&oslash;" 
+                    ];
+                    break;
+                case "s":
+                    replacementCharArray =
+                    [
+                        "S"
+                    ];
+                    break;
+                case "t":
+                    replacementCharArray =
+                    [
+                        "T"
+                    ];
+                    break;
+                case "u":
+                    replacementCharArray =
+                    [
+                        "U",
+                        "&Uacute;",  
+                        "&uacute;",  
+                        "&Ugrave;",  
+                        "&ugrave;",  
+                        "&Ucirc;",  
+                        "&ucirc;",  
+                        "&Uuml;",  
+                        "&uuml;"
+                    ];
+                    break;
+                case "y":
+                    replacementCharArray =
+                    [
+                        "Y",
+                        "&Yacute;",  
+                        "&yacute;",  
+                        "&yuml;"
+                    ];
+                    break;
+                default:
+                    replacementCharArray =
+                        ["ZZZ"];
+            }
+            return replacementCharArray;
+        }
 
-        //find out how many of letter X there are
-        var numChar = text.split(thisChar).length -1;
-           console.log('Number of '+ thisChar +"'s: "+ numChar);
-
-        //find the index of a random instance of letter X
-        var randCharNum = Math.floor((Math.random() * numChar) + 1);
-        
-        text = replaceAt(text, nth_ocurrence(text, thisChar, randCharNum), replacementChar);
+        function isReplaceChar(char){
+            for(var i=0;i<thisChar.length; i++){
+                if(char==thisChar[i]){
+                    return true;
+                }
+                else if(i==thisChar.length){
+                    return false;
+                }
+            }
+        }
 
         //function to identify each instance of letter X there are
         function nth_ocurrence(str, needle, nth) {
@@ -336,9 +478,10 @@ function correctGrammar(input) {
           }
           return false;
         }
+
         //replacement fucntion will only work for charcters of length 1
         function replaceAt(str, index, replacement) {
-            return str.substr(0, index) + replacement+ str.substr(index + 1);
+            return str.substr(0, index) + replacement + str.substr(index + 1);
         }
 
         return text;
