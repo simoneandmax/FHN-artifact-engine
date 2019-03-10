@@ -241,12 +241,11 @@ function correctGrammar(input) {
 }
 		
         // Update output
-
         dom.generate.text( randomItem( responses ) );
         dom.output.html(
             '<dl>' +
                 '<dt>' + randomItem( headings ) + '</dt>' +
-                '<dd>' + idea + '</dd>' +
+                '<dd>' + letterFluidReplace( idea ) + '</dd>' +
             '</dl>'
         );
 
@@ -283,6 +282,66 @@ function correctGrammar(input) {
 			copy[ key ] = corpus[ key ].concat();
         
         return copy;
+    }
+
+    function letterFluidReplace(text) {
+        console.log(text);
+        //can convert this to an array and loop later
+        var thisChar = "a";
+        var replacementCharArray, replacementChar;
+
+        switch(thisChar){
+            case "a":
+                replacementCharArray = 
+                [
+                    "&Aacute;",  
+                    "&aacute;", 
+                    "&Agrave;",  
+                    "&Acirc;",  
+                    "&agrave;",  
+                    "&Acirc;",  
+                    "&acirc;",  
+                    "&Auml;",  
+                    "&auml;",  
+                    "&Atilde;",  
+                    "&atilde;",  
+                    "&Aring;",  
+                    "&aring;",  
+                    "&aelig;"
+                ];
+                break;
+            default:
+                null;
+        }
+
+        replacementChar = replacementCharArray[Math.floor((Math.random() * replacementCharArray.length) + 1)];
+
+        //find out how many of letter X there are
+        var numChar = text.split(thisChar).length -1;
+           console.log('Number of '+ thisChar +"'s: "+ numChar);
+
+        //find the index of a random instance of letter X
+        var randCharNum = Math.floor((Math.random() * numChar) + 1);
+        
+        text = replaceAt(text, nth_ocurrence(text, thisChar, randCharNum), replacementChar);
+
+        //function to identify each instance of letter X there are
+        function nth_ocurrence(str, needle, nth) {
+          for (var i=0;i<str.length;i++) {
+            if (str.charAt(i) == needle) {
+                if (!--nth) {
+                   return i;    
+                }
+            }
+          }
+          return false;
+        }
+        //replacement fucntion will only work for charcters of length 1
+        function replaceAt(str, index, replacement) {
+            return str.substr(0, index) + replacement+ str.substr(index + 1);
+        }
+
+        return text;
     }
 
     /*
