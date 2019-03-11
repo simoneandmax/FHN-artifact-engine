@@ -6,7 +6,7 @@ $(function() {
 
          heading: [
             "Imagine, in the year 02029:",
-            "In the next 0010 years, we'll see:",
+            "In the next 0100 years, we'll see:",
 			 "This is our future:",
 		 ],
 		
